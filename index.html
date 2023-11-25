@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my_calendar</title>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth'
+            });
+            calendar.render();
+        });
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div id="editContain" class="margin">
+
+        <ul id="nav">
+            <li><button id="navAdd" class="navBtn">add</button></li>
+            <li><button id="navDelete" class="navBtn">delete</button></li>
+            <li><button id="navUpdate" class="navBtn">update</button></li>
+        </ul>
+
+        <div id="data" class="hide">
+
+            <div id="selectDiv" class="hide">
+                <select id="select">
+                    <option>choose</option>
+                </select>
+            </div>
+
+            <br>
+
+            <div id="inputDiv" class="hide">
+                <label for="title">title</label>
+                <input type="text" id="title" placeholder="enter title"><br>
+                <label for="dateS">date start</label>
+                <input type="date" id="dateS" placeholder="enter date"><br>
+                <label for="dateE">date end</label>
+                <input type="date" id="dateE" placeholder="enter date end"><br>
+            </div>
+
+            <br>
+
+            <button id="save">save</button>
+
+        </div>
+
+
+    </div>
+
+
+    <div id="calendarContain" class="margin">
+        <div id='calendar'></div>
+    </div>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
